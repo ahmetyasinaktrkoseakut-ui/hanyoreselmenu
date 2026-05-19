@@ -716,8 +716,10 @@ img {
 
 .row-title-bar {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
     margin-bottom: 4px;
+    gap: 12px;
 }
 
 .row-item-name {
@@ -728,9 +730,7 @@ img {
 }
 
 .row-connector {
-    flex-grow: 1;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    margin: 0 10px;
+    display: none;
 }
 
 .row-item-price {
@@ -741,19 +741,22 @@ img {
     flex-shrink: 0;
 }
 
+@media (min-width: 576px) {
+    .row-connector {
+        display: block;
+        flex-grow: 1;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        margin: 0 10px;
+    }
+}
+
 .row-description {
     font-size: 0.75rem;
     color: var(--text-muted);
     font-weight: 300;
     line-height: 1.4;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.menu-list-row-item:hover .row-description {
     white-space: normal;
-    overflow: visible;
+    word-break: break-word;
 }
 
 /* ==========================================================================
